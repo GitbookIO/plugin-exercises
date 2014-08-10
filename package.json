@@ -1,0 +1,18 @@
+{
+    "name": "gitbook-plugin-exercises",
+    "description": "Interactive exercices in a gitbook",
+    "main": "index.js",
+    "version": "0.0.0",
+    "engines": {
+        "gitbook": ">=1.0.0"
+    },
+    "homepage": "https://github.com/GitbookIO/plugin-exercises",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GitbookIO/plugin-exercises.git"
+    },
+    "license": "Apache 2",
+    "bugs": {
+        "url": "https://github.com/GitbookIO/plugin-exercises/issues"
+    }
+}
