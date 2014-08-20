@@ -6,20 +6,7 @@ With this plugin, a book can contain interactive exercises (currently only in Ja
 
 ## How to use it?
 
-You can use install it via **NPM**:
-
-```
-$ npm install gitbook-plugin-exercies
-```
-
-And use it for your book with:
-
-```
-$ gitbook build ./ --plugins=exercises
-```
-
-:warning: Don't forget to add it to your package.json and book.json.
-
+This plugin is installed by default with gitbook 1.0.1.
 
 ## Exercises format
 
