@@ -2,9 +2,9 @@
     "name": "gitbook-plugin-exercises",
     "description": "Interactive exercices in a gitbook",
     "main": "index.js",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "engines": {
-        "gitbook": ">=0.0.0"
+        "gitbook": ">=1.0.0"
     },
     "homepage": "https://github.com/GitbookIO/plugin-exercises",
     "repository": {
