@@ -8,6 +8,16 @@ With this plugin, a book can contain interactive exercises (currently only in Ja
 
 This plugin is installed by default with gitbook 1.0.1.
 
+To use the exercises plugin in your Gitbook project, add the `exercises` plugin to the `book.json` file.
+
+```
+{
+    "plugins": ["exercise"]
+}
+```
+> If you want to use multiple plugins in your project, seperate the plugin names with a comma.  For example: `"plugins": ["quizzes", "exercises"]`.
+
+
 ## Exercises format
 
 An exercise is defined by 4 simple parts:
