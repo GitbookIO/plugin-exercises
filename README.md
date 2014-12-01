@@ -12,7 +12,7 @@ To use the exercises plugin in your Gitbook project, add the `exercises` plugin 
 
 ```
 {
-    "plugins": ["exercise"]
+    "plugins": ["exercises"]
 }
 ```
 > If you want to use multiple plugins in your project, seperate the plugin names with a comma.  For example: `"plugins": ["quizzes", "exercises"]`.
