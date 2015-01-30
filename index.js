@@ -2,6 +2,8 @@ var _ = require("lodash");
 var fs = require("fs");
 var path = require("path");
 
+var retro = require("./lib/retro");
+
 var EXERCISE_TPL = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/exercise.html")));
 
 module.exports = {
@@ -37,6 +39,14 @@ module.exports = {
                     codes: codes
                 });
             }
+        }
+    },
+    hooks: {
+        "page:before": function(page) {
+            if(page.type != "markdown") {
+                return;
+            }
+            page.content = retro(page.content);
         }
     }
 };
