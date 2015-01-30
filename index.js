@@ -43,10 +43,16 @@ module.exports = {
     },
     hooks: {
         "page:before": function(page) {
+            // Skip all non markdown pages
             if(page.type != "markdown") {
-                return;
+                return page;
             }
+
+            // Rewrite content (modernizing old exercises)
             page.content = retro(page.content);
+
+            // Return modified page
+            return page;
         }
     }
 };
