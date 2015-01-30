@@ -26,7 +26,6 @@ require(["gitbook"], function(gitbook) {
 
         // Handles all our events
         var eventHandler = function(data, eventType) {
-            console.log([eventType, data]);
             switch(eventType) {
                 case 'progress':
                     // Update UI loading bar
@@ -141,7 +140,7 @@ require(["gitbook"], function(gitbook) {
 
     // Prepare all exercise
     var init = function() {
-        gitbook.state.$book.find("section.exercise").each(function() {
+        gitbook.state.$book.find(".exercise").each(function() {
             prepareExercise($(this));
         });
     };
