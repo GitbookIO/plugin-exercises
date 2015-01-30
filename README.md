@@ -6,17 +6,13 @@ With this plugin, a book can contain interactive exercises (currently only in Ja
 
 ## How to use it?
 
-This plugin is installed by default with gitbook 1.0.1.
-
-To use the exercises plugin in your Gitbook project, add the `exercises` plugin to the `book.json` file.
+To use the exercises plugin in your Gitbook project, add the `exercises` plugin to the `book.json` file, then install plugins using `gitbook install`.
 
 ```
 {
     "plugins": ["exercises"]
 }
 ```
-> If you want to use multiple plugins in your project, seperate the plugin names with a comma.  For example: `"plugins": ["quizzes", "exercises"]`.
-
 
 ## Exercises format
 
@@ -27,31 +23,22 @@ An exercise is defined by 4 simple parts:
 * **Solution** code, being a correct solution to the exercise
 * **Validation** code that tests the correctness of the user's input
 
-Exercises need to start and finish with a separation bar (```---``` or ```***```). It should contain 3 code elements (**base**, **solution** and **validation**). It can contain a 4th element that provides **context** code (functions, imports of libraries, etc which shouldn't be displayed to the user).
+```
+{% exercise %}
+Define a variable `x` equal to 10.
+{% initial %}
+var x =
+{% solution %}
+var x = 10;
+{% validation %}
+assert(x == 10);
+{% context %}
+// This is context code available everywhere
+// The user will be able to call magicFunc in his code
+function magicFunc() {
+    return 3;
+}
+{% endexercise %}
+```
 
-    ---
-
-    Define a variable `x` equal to 10.
-
-    ```js
-    var x =
-    ```
-
-    ```js
-    var x = 10;
-    ```
-
-    ```js
-    assert(x == 10);
-    ```
-
-    ```js
-    // This is context code available everywhere
-    // The user will be able to call magicFunc in his code
-    function magicFunc() {
-        return 3;
-    }
-    ```
-
-    ---
-
+The old format (`gitbook < 2.0.0`) is still supported but deprecated.
