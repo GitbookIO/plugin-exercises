@@ -2,7 +2,7 @@
     "name": "gitbook-plugin-exercises",
     "description": "Interactive exercices in a gitbook",
     "main": "index.js",
-    "version": "2.0.0-alpha.1",
+    "version": "2.0.0-alpha.2",
     "engines": {
         "gitbook": ">1.x.x"
     },
