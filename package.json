@@ -2,13 +2,12 @@
     "name": "gitbook-plugin-exercises",
     "description": "Interactive exercices in a gitbook",
     "main": "index.js",
-    "version": "1.0.0",
+    "version": "2.0.0-alpha.1",
     "engines": {
-        "gitbook": ">=1.0.0"
+        "gitbook": ">1.x.x"
     },
     "dependencies": {
         "lodash": "3.0.1",
-
         "kramed": "0.4.4",
         "kramed-markdown-renderer": "0.1.1"
     },
