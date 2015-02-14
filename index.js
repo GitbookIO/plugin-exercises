@@ -4,7 +4,8 @@ var path = require("path");
 
 var retro = require("./lib/retro");
 
-var EXERCISE_TPL = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/exercise.html")));
+var WEBSITE_TPL = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/website.html")));
+var EBOOK_TPL = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/ebook.html")));
 
 module.exports = {
     website: {
@@ -24,6 +25,12 @@ module.exports = {
             }
         }
     },
+    ebook: {
+        assets: "./assets",
+        css: [
+            "ebook.css"
+        ]
+    },
     blocks: {
         exercise: {
             blocks: ["initial", "solution", "validation", "context"],
@@ -34,7 +41,10 @@ module.exports = {
                     codes[_blk.name] = _blk.body.trim();
                 });
 
-                return EXERCISE_TPL({
+                // Select appropriate template
+                var tpl = (this.generator === 'website' ? WEBSITE_TPL : EBOOK_TPL);
+
+                return tpl({
                     message: blk.body,
                     codes: codes
                 });
