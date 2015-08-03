@@ -1,4 +1,4 @@
-Interactive exercises in a gitbook
+Interactive exercises in a GitBook
 ==============
 
 With this plugin, a book can contain interactive exercises (currently only in Javascript). An exercise is a code challenge provided to the reader, who is given a code editor to write a solution which is checked against the book author's validation code.
@@ -6,9 +6,9 @@ With this plugin, a book can contain interactive exercises (currently only in Ja
 
 ## How to use it?
 
-To use the exercises plugin in your Gitbook project, add the `exercises` plugin to the `book.json` file, then install plugins using `gitbook install`.
+To use the exercises plugin in your GitBook project, add the `exercises` plugin to the `book.json` file, then install plugins using `gitbook install`.
 
-```
+```json
 {
     "plugins": ["exercises"]
 }
