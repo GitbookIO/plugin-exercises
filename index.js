@@ -14,6 +14,7 @@ module.exports = {
             "ace/ace.js",
             "ace/theme-tomorrow.js",
             "ace/mode-javascript.js",
+            "ace/mode-python.js",
             "exercises.js"
         ],
         css: [
