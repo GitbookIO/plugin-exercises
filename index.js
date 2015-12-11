@@ -20,7 +20,7 @@ module.exports = {
             "exercises.css"
         ],
         html: {
-            "body:end": function(options) {
+            "body:start": function(options) {
                 return '<script src="'+options.staticBase+'/plugins/gitbook-plugin-exercises/jsrepl/jsrepl.js" id="jsrepl-script"></script>';
             }
         }
