@@ -18,12 +18,7 @@ module.exports = {
         ],
         css: [
             "exercises.css"
-        ],
-        html: {
-            "body:end": function(options) {
-                return '<script src="'+options.staticBase+'/plugins/gitbook-plugin-exercises/jsrepl/jsrepl.js" id="jsrepl-script"></script>';
-            }
-        }
+        ]
     },
     ebook: {
         assets: "./assets",

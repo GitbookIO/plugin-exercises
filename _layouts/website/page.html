@@ -1,0 +1,6 @@
+{% extends template.self %}
+
+{% block javascript %}
+    <script src="{{ "gitbook-plugin-exercises/jsrepl/jsrepl.js"|resolveAsset }}" id="jsrepl-script"></script>
+    {{ super() }}
+{% endblock %}
