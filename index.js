@@ -28,6 +28,7 @@ module.exports = {
     },
     blocks: {
         exercise: {
+            parse: false,
             blocks: ["initial", "solution", "validation", "context"],
             process: function(blk) {
                 var codes = {};
