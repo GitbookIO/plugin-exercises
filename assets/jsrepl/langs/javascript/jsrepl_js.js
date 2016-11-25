@@ -1,2 +1,54 @@
-(function(){self.JSREPLEngine=function(){function a(d,b,c,a,e,f){this.result=c;this.error=a;this.sandbox=e;this.inspect=this.sandbox.console.inspect;this.functionClass=this.sandbox.Function;this.sandbox.__eval=this.sandbox.eval;f()}a.prototype.Eval=function(d){var b;try{return b=this.sandbox.__eval(d),this.result(b===void 0?"":this.inspect(b))}catch(a){return this.error(a)}};a.prototype.RawEval=function(a){var b;try{return b=this.sandbox.__eval(a),this.result(b)}catch(c){return this.error(c)}};a.prototype.GetNextLineIndent=
-function(a){try{return new this.functionClass(a),false}catch(b){return/[\[\{\(]$/.test(a)?1:0}};return a}()}).call(this);
+(function() {
+  self.JSREPLEngine = (function() {
+    function JSREPLEngine(input, output, result1, error, sandbox, ready) {
+      this.result = result1;
+      this.error = error;
+      this.sandbox = sandbox;
+      this.inspect = this.sandbox.console.inspect;
+      this.functionClass = this.sandbox.Function;
+      this.sandbox.__eval = this.sandbox["eval"];
+      ready();
+    }
+
+    JSREPLEngine.prototype.Eval = function(command) {
+      var e, result;
+      try {
+        result = this.sandbox.__eval(command);
+        return this.result(result === void 0 ? '' : this.inspect(result));
+      } catch (_error) {
+        e = _error;
+        return this.error(e);
+      }
+    };
+
+    JSREPLEngine.prototype.RawEval = function(command) {
+      var e, result;
+      try {
+        result = this.sandbox.__eval(command);
+        return this.result(result);
+      } catch (_error) {
+        e = _error;
+        return this.error(e);
+      }
+    };
+
+    JSREPLEngine.prototype.GetNextLineIndent = function(command) {
+      var e;
+      try {
+        new this.functionClass(command);
+        return false;
+      } catch (_error) {
+        e = _error;
+        if (/[\[\{\(]$/.test(command)) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+    };
+
+    return JSREPLEngine;
+
+  })();
+
+}).call(this);

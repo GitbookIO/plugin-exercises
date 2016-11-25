@@ -1,6 +1,6 @@
 {
     "name": "gitbook-plugin-exercises",
-    "description": "Interactive exercices in a gitbook",
+    "description": "Interactive exercices in a GitBook",
     "main": "index.js",
     "version": "2.1.1",
     "engines": {

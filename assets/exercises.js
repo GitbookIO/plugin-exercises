@@ -6,6 +6,12 @@ require(["gitbook"], function(gitbook) {
             assertCode: "function assert(condition, message) { \nif (!condition) { \n throw message || \"Assertion failed\"; \n } \n }\n",
             REPL: JSREPL,
             sep: ";\n",
+        },
+        "python": {
+            id: "python",
+            assertCode: "def assert(condition,message='Assertion failed'):\n\tassert condition, message",
+            REPL: JSREPL,
+            sep: ";\n",
         }
     };
 
