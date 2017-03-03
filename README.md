@@ -22,23 +22,30 @@ An exercise is defined by 4 simple parts:
 * **Initial** code to show to the user, providing a starting point
 * **Solution** code, being a correct solution to the exercise
 * **Validation** code that tests the correctness of the user's input
+* **Context** (optional) code evaluated before executing the user's solution
 
 ```
 {% exercise %}
 Define a variable `x` equal to 10.
+
 {% initial %}
 var x =
+
 {% solution %}
 var x = 10;
+
 {% validation %}
 assert(x == 10);
+
 {% context %}
 // This is context code available everywhere
-// The user will be able to call magicFunc in his code
-function magicFunc() {
+// The user will be able to evaluate `exposedVar`
+var exposedVar = 3;
+// ... or call `exposedFunction`
+function exposedFunction {
     return 3;
 }
 {% endexercise %}
 ```
 
-The old format (`gitbook < 2.0.0`) is still supported but deprecated.
+The old format (`gitbook < 2.0.0`) is no more supported.
