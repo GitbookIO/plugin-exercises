@@ -2,8 +2,6 @@ var _ = require("lodash");
 var fs = require("fs");
 var path = require("path");
 
-var retro = require("./lib/retro");
-
 var WEBSITE_TPL = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/website.html")));
 var EBOOK_TPL = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/ebook.html")));
 
@@ -45,20 +43,6 @@ module.exports = {
                     codes: codes
                 });
             }
-        }
-    },
-    hooks: {
-        "page:before": function(page) {
-            // Skip all non markdown pages
-            if(page.type != "markdown") {
-                return page;
-            }
-
-            // Rewrite content (modernizing old exercises)
-            page.content = retro(page.content);
-
-            // Return modified page
-            return page;
         }
     }
 };
