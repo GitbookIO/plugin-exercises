@@ -108,6 +108,10 @@ require(["gitbook"], function(gitbook) {
         editor.getSession().setUseWorker(false);
         editor.getSession().setMode("ace/mode/javascript");
 
+        editor.setOptions({
+            maxLines: Infinity
+        });
+
         editor.commands.addCommand({
             name: "submit",
             bindKey: "Ctrl-Return|Cmd-Return",
